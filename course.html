@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Проект</title>
+    <link rel="shorcut icon" href="Bird.ico">
+    <link rel="stylesheet" href="all.css">
+</head>
+<body>
+
+<h4>Выберите степень полиномов</h4>       
+
+<section class="wrapper">
+    <div class="sectionLeft">
+        <select name="" id="degree" value="Выбрать">
+            <option value="" disabled selected>Выбрать степень</option>
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option  value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13 </option>
+         </select>
+        <input type="button" name="submit" id="submit" class="button4" value="Сгенерировать">
+        <p id="error1"></p>
+        <p id="good1"></p>
+        <p id="getTarget1"></p>
+        
+        <div class="sequence">
+                <p>Стартовая последовательность</p>
+                <input type="text" id="inputFirstSequence"placeholder="Введите стартовую последовательность">
+                <input type="button" name="submit" id="submitSequence" class="button4" value="Сгенерировать">
+                <br>   
+                <textarea name="" id="textAreaFirstSequence" cols="30" rows="10"></textarea>
+        </div>
+     </div>
+
+    <div class="sectionRight">
+        <select name="" id="degree2" value="Выбрать">
+            <option value="" disabled selected>Выбрать степень</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option   value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option selected value="13">13 </option>
+         </select>
+        <input type="button" name="submit" id="submit2" class="button4" value="Сгенерировать">
+        <p id="error2"></p>
+        <p id="good2"></p>
+        <p id="getTarget2"></p>
+     </div>
+ </section>
+
+ <input type="button" value="Press" id="press">
+ <section id="prev"></section>
+
+
+
+<script src="script.js"></script>
+<script>
+    
+</script>
+
+<script>
+     var matrixA = [];
+                   формирование матрицы под главной диагоналлю
+                    for(var i = 0;i<degree;i++){
+                      matrixA[i] = [];
+                        for(var j = 0; j<degree;j++){
+                             matrixA[i][j] = 0;
+                               if(i==j+1){
+                                 matrixA[i][j] = 1;
+                               }
+                            }
+                    }
+        
+                    matrixA.shift();  
+                    matrixA.unshift(matrixATemp);
+
+                    var printMatrixP = document.createElement("p");
+                    printMatrixP.innerHTML = "Матрица А";
+                    getTargetp.appendChild(printMatrixP);
+                    //вывод самой матрицы
+                    for (let i = 0; i < matrixA.length; i++) {
+                        let div   = document.createElement("p");
+                        printMatrixP.appendChild(div);
+                        for (let j = 0; j < matrixA[i].length; j++) {
+                          let span = document.createElement("span")
+                          span.innerHTML = matrixA[i][j];
+                          div.appendChild(span)
+                        }
+                    }
+</script>
+</body>
+</html>
+
+
+
